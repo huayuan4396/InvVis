@@ -2,5 +2,5 @@
 
 This is the model code for [InvVis: Large-Scale Data Embedding for Invertible Visualization]().
 
-![image-20230726152520504](/Users/yehuayuan/Code/Python/InvVisRepo/InvVis/README.assets/image-20230726152520504.png)
+<img src="https://github.com/open-mmlab/mmdeploy/assets/110151316/6faad417-e5a9-45ed-98dd-2836c2a79aff" alt="teasor" style="zoom: 40%;" />
 
