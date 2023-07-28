@@ -50,7 +50,7 @@ data
 |   |-- Data_Image_Dir1
 |   |-- Data_Image_Dir2
 |   |-- Data_Image_Dir3
-				...
+	...
 ```
 
 You can use more kinds of data image for training by modifying `dataloader.py` and `config.yml`.
