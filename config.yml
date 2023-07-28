@@ -1,0 +1,35 @@
+dataDir: "./data/"
+trainImgDir: "train/MASSVIS/"
+validateImgDir: "validate/"
+sciDataDir: "train/SCI/"
+perlinDataDir: "train/Perlin/"
+scatterDataDir: "train/Scatter/"
+qrDataDir: "train/QR/"
+testImgDir: "test/"
+resultImgDir: "./result/"
+imgExt: ".png"
+constantNoiseDir: "./noise2048.png"
+pretrainedModelDir: "./pretrained/DHN_4channel.pth"
+#pretrainedModelDir: "./checkpoints/MVSN_epoch610.pth"
+
+modelDir: "./checkpoints/"
+
+batchSize: 1
+epochNum: 10000
+qrMul: 0.15
+
+inputSize: 224
+qrSize: 360
+inputSizeTest: 1440
+blockNum: 8
+embedChannelNum: 4
+weightDecay: !!float 1e-5
+log10lr: -4.5
+betas1: 0.5
+betas2: 0.999
+eps: !!float 1e-6
+
+
+
+
+
