@@ -22,7 +22,7 @@ The test image should be placed in `data/test/`. Three images are expected for m
 
 - `cover.png` : The cover image for data embedding, usually a visualization image.
 - `data_image.png` : A 3-channel image, each channel of which is a data image generated with our **Data-to-Image (DTOI)** algorithm.
-- `qr_image.png` : A QR Code image containing one or more QR Codes containing chart information.
+- `qr_image.png` : A QR Code image containing one or more QR Codes encoded with chart information.
 
 More details are presented in our paper.
 
