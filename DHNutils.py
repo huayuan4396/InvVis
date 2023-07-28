@@ -3,7 +3,7 @@ import models.pytorch_ssim as pyssim
 import torch
 from torchvision import utils
 import matplotlib.pyplot as plt
-from thirdparty.perlin_numpy_master.perlin_numpy import generate_fractal_noise_2d
+# from thirdparty.perlin_numpy_master.perlin_numpy import generate_fractal_noise_2d
 import yaml
 import numpy as np
 import random
@@ -42,28 +42,6 @@ def Differentiable_Round(x, alpha):
     y = m.cuda() + (torch.tanh(alpha * r.cuda()) / z.cuda()).cuda()
 
     return y
-
-
-
-def GetPerlinNoise(shape):
-    resList = [2, 4, 8]
-    res = resList[np.random.randint(0, 2)]
-    octave = np.random.randint(1, 8)
-    np.random.seed(np.random.randint(0, 10000000))
-    noise = generate_fractal_noise_2d((shape[0], shape[1]), (res, res), octave)
-    return noise
-
-
-def SaveNoise(shape, name, dire="./data/train/scatter/"):
-    img = torch.rand(shape)
-    img = img.unsqueeze(0).unsqueeze(0)
-    SaveImageFromTensor(img, dire + name + GetOption("imgExt"), needUnnormalize=False)
-
-
-def SavePerlinNoise(shape, name, dire="./data/train/Perlin/"):
-    img = GetPerlinNoise(shape)
-    img = torch.from_numpy(img).unsqueeze(0).unsqueeze(0)
-    SaveImageFromTensor(img, dire + name + GetOption("imgExt"), needUnnormalize=False)
 
 
 def InitializeModel(mod):

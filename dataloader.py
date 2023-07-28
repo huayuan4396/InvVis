@@ -2,7 +2,6 @@ from skimage import io
 from PIL import Image
 from random import randint
 from torch.utils.data import Dataset
-from DHNutils import GetPerlinNoise
 import numpy as np
 import torch
 from DHNutils import GetOption, SaveImageFromTensor
