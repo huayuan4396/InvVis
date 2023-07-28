@@ -24,7 +24,9 @@ The test image should be placed in `data/test/`. Three images are expected for m
 - `data_image.png` : A 3-channel image, each channel of which is a data image generated with our **Data-to-Image (DTOI)** algorithm.
 - `qr_image.png` : A QR Code image containing one or more QR Codes encoded with chart information.
 
-More details are presented in our paper. We have prepared some images in `data/test/` for a quick start.
+More details are presented in our paper.
+
+We have prepared some images in `data/test/` for a quick start.
 
 Once the aboved mentioned data is prepared, you can test your model with:
 
