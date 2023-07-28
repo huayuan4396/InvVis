@@ -24,7 +24,7 @@ The test image should be placed in `data/test/`. Three images are expected for m
 - `data_image.png` : A 3-channel image, each channel of which is a data image generated with our **Data-to-Image (DTOI)** algorithm.
 - `qr_image.png` : A QR Code image containing one or more QR Codes encoded with chart information.
 
-More details are presented in our paper.
+More details are presented in our paper. We have prepared some images in `data/test/` for a quick start.
 
 Once the aboved mentioned data is prepared, you can test your model with:
 
@@ -37,4 +37,29 @@ The result images can be found in `result/` .
 
 
 ## Training
+
+You can also train the model with your own data.
+
+The training data should be ordered like:
+
+```bash
+data
+|-- train
+|   |-- MASSVIS  # or replace it with your own cover image dataset
+|   |-- QR_Image_Dir
+|   |-- Data_Image_Dir1
+|   |-- Data_Image_Dir2
+|   |-- Data_Image_Dir3
+				...
+```
+
+You can use more kinds of data image for training by modifying `dataloader.py` and `config.yml`.
+
+Once the data is prepared, you can train your model with:
+
+```bash
+python train.py
+```
+
+The model checkpoints will be saved in `checkpoints/` .
 
