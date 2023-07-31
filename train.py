@@ -19,9 +19,8 @@ from DHNutils import SaveImageFromTensor
 # prepare training data
 print("preparing training data")
 
-# trainImgNameList = natsorted(
-#     sorted(glob.glob(GetOption("dataDir") + GetOption("trainImgDir") + "*" + GetOption("imgExt"))))
-trainImgNameList = natsorted(sorted(glob.glob("../VIS30K/VIS30K/*/" + "*Info*" + GetOption("imgExt"))))
+trainImgNameList = natsorted(
+    sorted(glob.glob(GetOption("dataDir") + GetOption("trainImgDir") + "*" + GetOption("imgExt"))))
 validateImgNameList = natsorted(
     sorted(glob.glob(GetOption("dataDir") + GetOption("validateImgDir") + "*" + GetOption("imgExt"))))
 sciDataNameList = natsorted(
@@ -201,25 +200,6 @@ for ec in range(GetOption("epochNum")):
         img = img.unsqueeze(0)
         netInput = torch.cat([img, randData], dim=1)
         embedLossS, embedLossF, restoreLossTS, restoreLossTF, restoreLossBS, embed, restoreB = net(netInput)
-        # if epochCount > 0 and (epochCount + 1) % 5 == 0:
-            # SaveImageFromTensor(embed, GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_embed_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(img, GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_init_" + GetOption("imgExt"), needUnnormalize=False)
-            # # SaveImageFromTensor(imp, GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_imp_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(torch.abs(embed - img), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_embedLoss_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(restoreB[:, 0:1, :, :], GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreBX_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(restoreB[:, 1:2, :, :], GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreBY_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(restoreB[:, 2:3, :, :], GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreBZ_" + GetOption("imgExt"), needUnnormalize=False)
-            # # SaveImageFromTensor(restoreB[:, 3:4, :, :] / GetOption("qrMul"), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreBW_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(torch.abs(restoreB[:, 0:1, :, :] - randData[:, 0:1, :, :]), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreLossX_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(torch.abs(restoreB[:, 1:2, :, :] - randData[:, 1:2, :, :]), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreLossY_" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(torch.abs(restoreB[:, 2:3, :, :] - randData[:, 2:3, :, :]), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreLossZ_" + GetOption("imgExt"), needUnnormalize=False)
-            # # SaveImageFromTensor(torch.abs(restoreB[:, 3:4, :, :] - randData[:, 3:4, :, :]) / GetOption("qrMul"), GetOption("resultImgDir") + "epoch" + str(epochCount + 1) + "_restoreLossW_" + GetOption("imgExt"), needUnnormalize=False)
-
-        # if epochCount == 0:
-            # SaveImageFromTensor(dataX.unsqueeze(0), GetOption("resultImgDir") + "dataX" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(dataY.unsqueeze(0), GetOption("resultImgDir") + "dataY" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(dataZ.unsqueeze(0), GetOption("resultImgDir") + "dataZ" + GetOption("imgExt"), needUnnormalize=False)
-            # SaveImageFromTensor(dataW.unsqueeze(0), GetOption("resultImgDir") + "dataW" + GetOption("imgExt"), needUnnormalize=False)
 
         mse_s.append(DHNutils.GetL1Loss(restoreB, randData).item())
 
