@@ -48,7 +48,7 @@ The training data should be ordered like:
 data
 |-- train
 |   |-- MASSVIS  # or replace it with your own cover image dataset
-|   |-- QR_Image_Dir
+|   |-- QR_Image_Dir # the directory of your QR Image dataset
 |   |-- Data_Image_Dir1
 |   |-- Data_Image_Dir2
 |   |-- Data_Image_Dir3
