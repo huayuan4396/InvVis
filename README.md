@@ -65,3 +65,18 @@ python train.py
 
 The model checkpoints will be saved in `checkpoints/` .
 
+
+
+## Citation
+
+```bib
+@InProceedings{VIS2023-InvVis,
+  title={InvVis: Large-Scale Data Embedding for Invertible Visualization},
+  author = {Huayuan Ye, Chenhui Li, Yang Li and Changbo Wang},
+  booktitle={IEEE Transactions on Visualization and Computer Graphics},
+  year={2023}
+}
+```
+
+
+
