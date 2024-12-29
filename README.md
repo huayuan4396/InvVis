@@ -70,11 +70,12 @@ The model checkpoints will be saved in `checkpoints/` .
 ## Citation
 
 ```bib
-@InProceedings{VIS2023-InvVis,
-  title={InvVis: Large-Scale Data Embedding for Invertible Visualization},
-  author = {Huayuan Ye, Chenhui Li, Yang Li and Changbo Wang},
-  booktitle={IEEE Transactions on Visualization and Computer Graphics},
-  year={2023}
+@article{ye2023invvis,
+  title={InvVis: Large-scale data embedding for invertible visualization},
+  author={Ye, Huayuan and Li, Chenhui and Li, Yang and Wang, Changbo},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2023},
+  publisher={IEEE}
 }
 ```
 
